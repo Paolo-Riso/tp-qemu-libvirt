@@ -1,0 +1,14 @@
+#cloud-config
+ssh_pwauth: true
+hostname: cloudinit-demo
+users:
+  - name: demo
+    sudo: ALL=(ALL) NOPASSWD:ALL
+    groups: sudo
+    shell: /bin/bash
+    lock_passwd: false
+    plain_text_passwd: 'demo'
+
+runcmd:
+  - echo "Provisionné automatiquement par cloud-init le $(date)" > /etc/motd
+  - touch /home/demo/preuve-cloudinit.txt

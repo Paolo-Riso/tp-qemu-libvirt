@@ -1,0 +1,2 @@
+instance-id: cloudinit-demo-001
+local-hostname: cloudinit-demo
